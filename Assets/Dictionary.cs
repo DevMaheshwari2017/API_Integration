@@ -34,7 +34,7 @@ public class Dictionary : MonoBehaviour
 
         if (string.IsNullOrWhiteSpace(input) || input.Contains(" "))
         {
-            definitionText.text = "Please enter a **single word** without spaces.";
+            definitionText.text = "Please enter a single word without spaces.";
             return;
         }
 
