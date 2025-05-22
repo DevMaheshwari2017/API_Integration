@@ -85,6 +85,14 @@ public class Dictionary : MonoBehaviour
         {
             StartCoroutine(PlayPronunciationAudio(audioUrl));
         }
+        else
+        {
+            Debug.Log("Audio url is: " + url);
+            noAudioErrorMessage.SetActive(true);
+            yield return new WaitForSeconds(3.5f);
+            noAudioErrorMessage.SetActive(false);
+
+        }
     }
 
     /// <summary>
@@ -107,12 +115,6 @@ public class Dictionary : MonoBehaviour
             audioSource.Play();
             yield return new WaitForSeconds(clip.length);
             characterAnimator.SetBool("IsTalking", false);
-        }
-        else 
-        {
-            noAudioErrorMessage.SetActive(true);
-            yield return new WaitForSeconds(2f);
-            noAudioErrorMessage.SetActive(false);
         }
     }
 }
